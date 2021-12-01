@@ -36,11 +36,17 @@ const rl = readline.createInterface({
 });
 
 rl.question('What\'s your name/nickname?  ', (name) => {
-  rl.question('What\'s your face?  ', (face) => {
-
-  
-  console.log(`Thank you for your valuable feedback: ${name} ${face}`);
-
-  rl.close();
-  })
+  rl.question('What\'s your favorite song?  ', (song) => {
+    rl.question('What\'s your favorite movie/show?  ', (movie) => {
+      rl.question('What\'s your favorite food?  ', (food) => {
+        rl.question('What\'s your favorite drink?  ', (drink) => {
+          rl.question('What\'s your dream vacation spot?  ', (dream) => {
+            console.log(`${name} loves to listen to binge watch ${movie} while eating ${food} and drinking ${drink}.`);
+            console.log(`${name}'s favorite song is ${song}, and their dream vacation spot is ${dream}.`);
+            rl.close();
+          });
+        });
+      });
+    });
+  });
 });
